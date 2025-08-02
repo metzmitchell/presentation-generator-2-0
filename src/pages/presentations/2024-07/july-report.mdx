@@ -1,0 +1,82 @@
+import { TitleSlide, ContentSlide, ChartSlide, BulletSlide } from '@/components/layouts'
+import { LineChart, BarChart } from '@/components/charts'
+
+<SlidePage>
+
+<TitleSlide 
+  title="July 2024 Report" 
+  subtitle="Construction Projects Update"
+  author="Mitchell Metz"
+  date="July 31, 2024"
+/>
+
+---
+
+<ContentSlide title="July Overview" layout="center">
+
+Strong performance across all key metrics with significant growth in new project acquisitions.
+
+**Projects Started**: 12 new builds  
+**Projects Completed**: 8 homes delivered  
+**Total Revenue**: $3.2M (+18% MoM)
+
+</ContentSlide>
+
+---
+
+<ChartSlide 
+  title="BuilderTrend Data - July 2024"
+  description="Weekly project completions throughout July"
+  chart={
+    <BarChart
+      data={[
+        { name: 'Week 1', completed: 2 },
+        { name: 'Week 2', completed: 1 },
+        { name: 'Week 3', completed: 3 },
+        { name: 'Week 4', completed: 2 }
+      ]}
+      dataKey="completed"
+      color="#00d9ff"
+      height={350}
+    />
+  }
+/>
+
+---
+
+<BulletSlide 
+  title="Key Insights from BuilderTrend"
+  bullets={[
+    'Average project duration decreased by 5 days',
+    'Customer satisfaction scores improved to 4.8/5',
+    'Change order frequency reduced by 22%',
+    'Subcontractor scheduling efficiency up 15%',
+    'Material waste reduced by 8% through better tracking'
+  ]}
+/>
+
+---
+
+<ContentSlide title="August Projections" layout="left">
+
+Based on current pipeline and seasonal trends:
+
+- **Expected Starts**: 15-18 new projects
+- **Completion Target**: 10 homes
+- **Revenue Forecast**: $3.5-3.8M
+
+Focus areas for improvement:
+- Streamline permit acquisition process
+- Enhance subcontractor communication
+- Implement new quality control checklist
+
+</ContentSlide>
+
+---
+
+<TitleSlide 
+  title="Thank You" 
+  subtitle="Questions & Discussion"
+/>
+
+</SlidePage>

@@ -8,9 +8,11 @@ This is a presentation generator project (version 2.0) that is part of Mitchell'
 
 ## Project Status
 
-**Current State**: Initial planning phase
-- Project structure not yet implemented
-- Two planning documents exist in `/initial_notes/`
+**Current State**: Functional presentation generator with directory system
+- Directory homepage implemented at `/` (index.jsx)
+- Presentation routing system with categories and tags
+- Multiple example presentations available
+- Build system working with Node.js compatibility fixes
 
 ## Important Rules
 
@@ -46,32 +48,44 @@ npm run lint            # ESLint
 npm run typecheck       # TypeScript type checking (if configured)
 ```
 
-## Project Structure (Expected)
+## Project Structure
 
-Once implemented, the project will likely follow this structure:
+The project follows this structure:
 - `/src` - Source code
   - `/components` - React components
-  - `/pages` or `/routes` - Page components
-  - `/lib` or `/utils` - Utility functions
+    - `Directory.jsx` - Homepage directory component
+    - `/layouts` - Slide layout components
+    - `/charts` - Chart components for data presentations
+  - `/pages` - Next.js pages and presentations
+    - `index.jsx` - Homepage with presentation directory
+    - `demo.mdx` - NextJS MDX Deck demo presentation
+    - `page-2.mdx` - MDX components tutorial
+    - `/presentations/YYYY-MM/` - Organized presentation files
+  - `/lib` - Utility functions
+    - `presentations.js` - Presentation registry and utilities
+  - `/data` - Data files and presentation templates
   - `/styles` - Global styles
 - `/public` - Static assets
-- Configuration files (vite.config.ts, tsconfig.json, etc.)
+- Configuration files (next.config.js, tsconfig.json, etc.)
 
 ## Development Guidelines
 
-### When Initializing the Project
+### Adding New Presentations
 
-1. **Use Vite** for project setup with React and TypeScript template
-2. **Install dependencies**: 
-   - Core: `react`, `react-dom`, `typescript`
-   - Styling: `tailwindcss`, `@tailwindcss/typography`, shadcn/ui components
-   - Development: `@types/react`, `@types/react-dom`, `eslint`, `prettier`
+1. **Create MDX file** in appropriate `/src/pages/presentations/YYYY-MM/` directory
+2. **Register presentation** in `/src/lib/presentations.js`:
+   - Add entry to `presentationRegistry` array
+   - Include metadata: title, description, path, category, tags, author, date
+3. **Use available components**: SlidePage, TitleSlide, ContentSlide, ChartSlide, etc.
+4. **Follow naming conventions**: Use kebab-case for filenames
 
-3. **Follow parent repository patterns**:
-   - Use shadcn/ui components for UI consistency
-   - Implement responsive design (mobile-first)
-   - Include proper TypeScript typing
-   - Set up ESLint and Prettier configurations
+### Directory System
+
+- **Homepage** (`/`) displays all presentations in a filterable directory
+- **Categories**: demo, tutorial, reports, business, technical, personal
+- **Tags**: Flexible tagging system for cross-category organization
+- **Filtering**: Users can filter by category and tag combinations
+- **No menus on presentation pages**: Only the homepage provides navigation
 
 ### Code Quality Standards
 
