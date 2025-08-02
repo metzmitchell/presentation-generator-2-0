@@ -1,0 +1,19 @@
+# Cursor Rules for Presentation Generator 2.0
+
+## File Protection Rules
+- NEVER edit, modify, or delete any files in the `initial_notes/` directory unless explicitly requested by the user
+- The `initial_notes/` directory contains planning documents and research notes that should remain untouched
+- Only read files in `initial_notes/` when needed for context or understanding the project
+
+## General Development Rules
+- Follow TypeScript best practices
+- Use modern React patterns and hooks
+- Implement responsive design principles
+- Write clean, maintainable code with proper documentation
+- Use semantic HTML and accessible design patterns
+
+## Project-Specific Guidelines
+- This is a presentation generator project
+- Focus on creating web-based presentation tools
+- Consider data visualization and interactive elements
+- Prioritize user experience and performance 

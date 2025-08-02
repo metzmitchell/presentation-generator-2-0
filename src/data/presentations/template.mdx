@@ -1,0 +1,113 @@
+import { TitleSlide, ContentSlide, ChartSlide, BulletSlide } from '@/components/layouts'
+import { LineChart, BarChart, PieChart } from '@/components/charts'
+
+<SlidePage>
+
+<TitleSlide 
+  title="Monthly Report" 
+  subtitle="Project Updates and Metrics"
+  author="Your Name"
+  date="Month 2024"
+/>
+
+---
+
+<ContentSlide title="Executive Summary" layout="center">
+
+Key highlights from this month's performance and achievements.
+
+**Revenue Growth**: 15% increase month-over-month  
+**Customer Satisfaction**: 92% positive feedback  
+**Project Completion**: 8 of 10 projects delivered on time
+
+</ContentSlide>
+
+<SpeakerNotes>
+- Emphasize the revenue growth achievement
+- Mention the team's hard work on project deliveries
+- Address any questions about the 2 delayed projects
+</SpeakerNotes>
+
+---
+
+<ChartSlide 
+  title="Monthly Revenue Trend"
+  description="Revenue performance over the last 6 months"
+  chart={
+    <LineChart
+      data={[
+        { name: 'Jan', revenue: 4000 },
+        { name: 'Feb', revenue: 3800 },
+        { name: 'Mar', revenue: 5000 },
+        { name: 'Apr', revenue: 4800 },
+        { name: 'May', revenue: 5200 },
+        { name: 'Jun', revenue: 6000 }
+      ]}
+      dataKey="revenue"
+      color="#0070f3"
+      height={350}
+    />
+  }
+/>
+
+---
+
+<ChartSlide
+  title="Project Status Overview"
+  chart={
+    <PieChart
+      data={[
+        { name: 'Completed', value: 8 },
+        { name: 'In Progress', value: 5 },
+        { name: 'Delayed', value: 2 }
+      ]}
+      height={350}
+    />
+  }
+/>
+
+---
+
+<BulletSlide 
+  title="Key Achievements"
+  bullets={[
+    'Launched new customer portal with 500+ active users',
+    'Reduced support ticket response time by 40%',
+    'Completed migration to cloud infrastructure',
+    'Onboarded 3 new enterprise clients',
+    'Achieved ISO 27001 certification'
+  ]}
+/>
+
+---
+
+<ContentSlide title="Next Month's Priorities" layout="two-column">
+
+<div>
+
+### Product Development
+- Release v2.0 of mobile app
+- Complete API documentation
+- Beta test new features
+
+</div>
+
+<div>
+
+### Business Growth
+- Expand to 2 new markets
+- Launch partner program
+- Increase team by 20%
+
+</div>
+
+</ContentSlide>
+
+---
+
+<TitleSlide 
+  title="Questions?" 
+  subtitle="Thank you for your attention"
+/>
+
+</SlidePage>
